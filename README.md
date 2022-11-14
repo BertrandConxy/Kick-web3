@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/SmartContract)
-# Lottery
-> This is the Lottery app that implements the concept of the smart contracts. The player deposit ether in the smart contract and then manager tells the smart contract to randomly choose the winner. When the winner is chosen the summation of ether is sent to his/her wallet.
+# kick-web3
+> There have been a problem in the fundraising platforms where people raise funds and then use it at their expense. This campaign smart contract to solve the problem in the Kickstart platform. The campaign smart contract will solve the problem by helping project owners to raise funds but more importantly help the sponsors play a part (vote) on what is going to be done with the money. The contract will be holding funds and spend on the agreement between the project owner and contributors. It is build with Solidity and JavaScript.
 
 
 Additional description about the project and its features.
@@ -45,8 +45,8 @@ To get a local copy up and running follow these simple example steps.
 #### Clone this repository
 
 ```bash
-$ git@github.com:BertrandConxy.Lottery.git
-$ cd Lottery
+$ git@github.com:BertrandConxy.Kick-web3.git
+$ cd Kick-web3
 ```
 #### Install a libraries
 
@@ -54,21 +54,11 @@ $ cd Lottery
 $ npm install
 ```
 
-### Compile Solidity codes
-
-```bash
-$ solcjs --bin contract.sol
-```
-
 ### Deploy to local test network or public test network
 - Set up Web3
 - Set up Ganache (For local test network) or Goerli (For public test network)
 - Set up the Provider
 - Deploy the contract to start interacting with it
-
-### Exposed or public methods
-- message(getter method / call)
-- setMessage(setter)
 
 ## Author
 
@@ -82,7 +72,7 @@ $ solcjs --bin contract.sol
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/BertrandConxy/Lottery/issues).
+Feel free to check the [issues page](https://github.com/BertrandConxy/Kick-web3/issues).
 
 ## Acknowledgement
 - Thanks to Udemy
