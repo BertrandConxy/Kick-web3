@@ -1,0 +1,99 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_minimum",
+						"type": "uint256"
+					}
+				],
+				"name": "createCampaign",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "deployedCampaigns",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDeployedCampaigns",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/CampaignFactory.sol": "CampaignFactory"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/CampaignFactory.sol": {
+			"keccak256": "0x24af7325d0fb82697615fe6ba1b2fd84ed0972bb0bdc6bf8d49566e68c028beb",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a4727b986a61e53804c3d77b96bdde9af5381f91e37b596e7d451b0b920be900",
+				"dweb:/ipfs/QmaqTSdKWKncujC7xLj7PoMfmYx11Y82hbAth1ZThZHzoi"
+			]
+		},
+		"contracts/campaign.sol": {
+			"keccak256": "0x9ef5187d78ca2028dca9d035ce97bd69aedd79303e1f53c740a34d3d0f8659d7",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ba060884811eaf4adf1827dee96e594c171c1355ecf60e8e54b3d1df18149db1",
+				"dweb:/ipfs/QmaATEwpwSAEXL4LYEyewUgZpSD52X4ddx5adh3qQhqnVm"
+			]
+		}
+	},
+	"version": 1
+}

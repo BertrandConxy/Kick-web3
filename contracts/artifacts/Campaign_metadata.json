@@ -20,7 +20,7 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "index",
+						"name": "_index",
 						"type": "uint256"
 					}
 				],
@@ -79,6 +79,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "finalizeRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "manager",
 				"outputs": [
@@ -98,6 +111,45 @@
 					{
 						"internalType": "uint256",
 						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "requests",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "complete",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "approvalCount",
 						"type": "uint256"
 					}
 				],
@@ -133,11 +185,11 @@
 	},
 	"sources": {
 		"contracts/campaign.sol": {
-			"keccak256": "0xff9db61afd8ca0a61259aff398fa76ea827f2c11670e4677ed9f7484fd01d65f",
+			"keccak256": "0x2497392455f53d83b46daa91b0a71d44c3bdd325332bb6aed73dbb873e274c42",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://2835d35e36e0f1822a90c1800ff0b5bba8b2a759b4e24526c4e37f6d3ddcca20",
-				"dweb:/ipfs/QmXS6i85LzV42nAqeBye3BzuP9kSf2fMYTaCnhd69ugduQ"
+				"bzz-raw://fb93bd055f17b86ae778b92b0dd23b27b8f014a96d274aa28f2c0b365065ce2e",
+				"dweb:/ipfs/QmV1okEPAKKDui93kHQUXAi9UTuLf74rNpwh5YVreibnsv"
 			]
 		}
 	},
