@@ -20,16 +20,29 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "index",
 						"type": "uint256"
+					}
+				],
+				"name": "approveRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"name": "approvers",
 				"outputs": [
 					{
-						"internalType": "address",
+						"internalType": "bool",
 						"name": "",
-						"type": "address"
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -62,7 +75,7 @@
 				],
 				"name": "createRequest",
 				"outputs": [],
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -86,40 +99,6 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "requests",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "description",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "value",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "recipient",
-						"type": "address"
-					},
-					{
-						"internalType": "bool",
-						"name": "complete",
-						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -154,11 +133,11 @@
 	},
 	"sources": {
 		"contracts/campaign.sol": {
-			"keccak256": "0x7000cc2448d12af4d57b9b54e3c5232e87c5e841cadec3503f6f821173879ac5",
+			"keccak256": "0xff9db61afd8ca0a61259aff398fa76ea827f2c11670e4677ed9f7484fd01d65f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://7f82757caa34a8d4c42339de3d4db0cb600b4ada284dc6b55333e2d3916bd711",
-				"dweb:/ipfs/QmQVnqhwNSHAY7WxKGzKyEdDewctrGQnSjy9HsPDB1DyrW"
+				"bzz-raw://2835d35e36e0f1822a90c1800ff0b5bba8b2a759b4e24526c4e37f6d3ddcca20",
+				"dweb:/ipfs/QmXS6i85LzV42nAqeBye3BzuP9kSf2fMYTaCnhd69ugduQ"
 			]
 		}
 	},
