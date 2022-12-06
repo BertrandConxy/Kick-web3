@@ -11,6 +11,11 @@
 						"internalType": "uint256",
 						"name": "minimum",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -185,11 +190,11 @@
 	},
 	"sources": {
 		"contracts/campaign.sol": {
-			"keccak256": "0x2497392455f53d83b46daa91b0a71d44c3bdd325332bb6aed73dbb873e274c42",
+			"keccak256": "0x9ef5187d78ca2028dca9d035ce97bd69aedd79303e1f53c740a34d3d0f8659d7",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://fb93bd055f17b86ae778b92b0dd23b27b8f014a96d274aa28f2c0b365065ce2e",
-				"dweb:/ipfs/QmV1okEPAKKDui93kHQUXAi9UTuLf74rNpwh5YVreibnsv"
+				"bzz-raw://ba060884811eaf4adf1827dee96e594c171c1355ecf60e8e54b3d1df18149db1",
+				"dweb:/ipfs/QmaATEwpwSAEXL4LYEyewUgZpSD52X4ddx5adh3qQhqnVm"
 			]
 		}
 	},
