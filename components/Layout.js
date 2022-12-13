@@ -1,25 +1,27 @@
 import React from 'react'
-import { Icon } from 'semantic-ui-react'
+import Link from 'next/link'
+import 'semantic-ui-css/semantic.min.css'
+import { Icon, Container } from 'semantic-ui-react'
 
 const Layout = ({ children }) => {
   return (
     <>
       <nav style={styles.nav}>
-        <a href="#" className="brand-logo">
+        <Link href="/" className="brand-logo">
           CrowdCoin
-        </a>
+        </Link>
         <ul id="nav-mobile" style={styles.navList}>
           <li style={styles.navListItem}>
             <a href="#">Campaigns</a>
           </li>
           <li style={styles.navListItem}>
-            <a href="#">
+            <Link href="/campaigns/new">
               <Icon name="plus circle" />
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
-      <section className="container">{children}</section>
+      <Container style={styles.mt}>{children}</Container>
     </>
   )
 }
@@ -39,6 +41,10 @@ const styles = {
     display: 'flex',
     listStyle: 'none',
     gap: '20px',
+  },
+
+  mt: {
+    marginTop: '20px',
   },
 }
 
