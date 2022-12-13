@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
         </Link>
         <ul id="nav-mobile" style={styles.navList}>
           <li style={styles.navListItem}>
-            <a href="#">Campaigns</a>
+            <Link href="/">Campaigns</Link>
           </li>
           <li style={styles.navListItem}>
             <Link href="/campaigns/new">

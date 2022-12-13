@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
-import Layout from '../../components/Layout.js'
 import { Button, Form, Input, Message } from 'semantic-ui-react'
-import instance from '../../contracts/factory.js'
-import web3 from '../../contracts/web3.js'
+import instance from '../contracts/factory.js'
+import web3 from '../contracts/web3.js'
 
-const NewCampaign = () => {
+const ContributeFrom = () => {
   const router = useRouter()
   const [minimumContribution, setMinimumContribution] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
@@ -34,26 +33,23 @@ const NewCampaign = () => {
     setMinimumContribution(event.target.value)
   }
   return (
-    <Layout>
-      <h1>New Campaign</h1>
-      <Form style={styles.form} onSubmit={onSubmit} error={!!errorMessage}>
-        <Form.Field>
-          <label>Minimum Contribution</label>
-          <Input
-            placeholder="Enter Amount"
-            label="Wei"
-            labelPosition="right"
-            type="number"
-            value={minimumContribution}
-            onChange={onInputChange}
-          />
-        </Form.Field>
-        <Message error header="Oops!" content={errorMessage} />
-        <Button type="submit" primary loading={loading}>
-          Create!
-        </Button>
-      </Form>
-    </Layout>
+    <Form style={styles.form} onSubmit={onSubmit} error={!!errorMessage}>
+      <Form.Field>
+        <label>Minimum Contribution</label>
+        <Input
+          placeholder="Enter Amount"
+          label="Wei"
+          labelPosition="right"
+          type="number"
+          value={minimumContribution}
+          onChange={onInputChange}
+        />
+      </Form.Field>
+      <Message error header="Oops!" content={errorMessage} />
+      <Button type="submit" primary loading={loading}>
+        Create!
+      </Button>
+    </Form>
   )
 }
 
@@ -63,4 +59,4 @@ const styles = {
   },
 }
 
-export default NewCampaign
+export default ContributeFrom

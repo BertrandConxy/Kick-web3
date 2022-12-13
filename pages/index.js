@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link.js'
 import instance from '../contracts/factory.js'
 import { Card, Button, Grid, Container } from 'semantic-ui-react'
 import Layout from '../components/Layout.js'
@@ -16,13 +17,14 @@ const Home = ({ deployedCampaigns }) => {
                 <h3>Open Campaigns</h3>
               </Grid.Column>
               <Grid.Column>
-                <Button
-                  floated="right"
-                  content="Create Campaign"
-                  icon="add circle"
-                  primary
-                  onClick={() => router.push('/campaigns/new')}
-                />
+                <Link href="/campaigns/new">
+                  <Button
+                    floated="right"
+                    content="Create Campaign"
+                    icon="add circle"
+                    primary
+                  />
+                </Link>
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -34,7 +36,9 @@ const Home = ({ deployedCampaigns }) => {
                     <Card.Header style={styles.wrap}>{address}</Card.Header>
                   </Card.Content>
                   <Card.Content extra>
-                    <Button primary>View Campaign</Button>
+                    <Link href={`/campaigns/${address}`}>
+                      <Button primary>View Campaign</Button>
+                    </Link>
                   </Card.Content>
                 </Card>
               )
