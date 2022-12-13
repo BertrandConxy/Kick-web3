@@ -12,36 +12,71 @@ const ShowCampaign = () => {
   return (
     <Layout>
       <h1>Campaign: {address}</h1>
-      <Grid columns={2}>
+      <Grid columns={2} padded={'vertically'}>
         <Grid.Row>
           <Grid.Column>Campaign Details</Grid.Column>
           <Grid.Column>Contribute To Campaign</Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
-            <Card.Group>
-              <Card>
-                <Card.Content>
-                  <Card.Header>Campaign Balance</Card.Header>
-                  <Card.Meta>Balance</Card.Meta>
-                  <Card.Description>Balance</Card.Description>
-                </Card.Content>
-              </Card>
-              <Card>
-                <Card.Content>
-                  <Card.Header>Minimum Contribution</Card.Header>
-                  <Card.Meta>Minimum Contribution</Card.Meta>
-                  <Card.Description>Minimum Contribution</Card.Description>
-                </Card.Content>
-              </Card>
-              <Card.Group>
-                <Card.Content>
-                  <Card.Header>Requests</Card.Header>
-                  <Card.Meta>Requests</Card.Meta>
-                  <Card.Description>Requests</Card.Description>
-                </Card.Content>
-              </Card.Group>
-            </Card.Group>
+            <Grid columns={2}>
+              <Grid.Row>
+                <Grid.Column>
+                  <Card>
+                    <Card.Content>
+                      <Card.Header>Campaign Balance</Card.Header>
+                      <Card.Meta>Balance</Card.Meta>
+                      <Card.Description>Balance</Card.Description>
+                    </Card.Content>
+                  </Card>
+                </Grid.Column>
+                <Grid.Column>
+                  <Card>
+                    <Card.Content>
+                      <Card.Header>Campaign Balance</Card.Header>
+                      <Card.Meta>Balance</Card.Meta>
+                      <Card.Description>Balance</Card.Description>
+                    </Card.Content>
+                  </Card>
+                </Grid.Column>
+                <Grid.Column>
+                  <Card>
+                    <Card.Content>
+                      <Card.Header>Campaign Balance</Card.Header>
+                      <Card.Meta>Balance</Card.Meta>
+                      <Card.Description>Balance</Card.Description>
+                    </Card.Content>
+                  </Card>
+                </Grid.Column>
+                <Grid.Column>
+                  <Card>
+                    <Card.Content>
+                      <Card.Header>Campaign Balance</Card.Header>
+                      <Card.Meta>Balance</Card.Meta>
+                      <Card.Description>Balance</Card.Description>
+                    </Card.Content>
+                  </Card>
+                </Grid.Column>
+                <Grid.Column>
+                  <Card>
+                    <Card.Content>
+                      <Card.Header>Campaign Balance</Card.Header>
+                      <Card.Meta>Balance</Card.Meta>
+                      <Card.Description>Balance</Card.Description>
+                    </Card.Content>
+                  </Card>
+                </Grid.Column>
+                <Grid.Column>
+                  <Card>
+                    <Card.Content>
+                      <Card.Header>Campaign Balance</Card.Header>
+                      <Card.Meta>Balance</Card.Meta>
+                      <Card.Description>Balance</Card.Description>
+                    </Card.Content>
+                  </Card>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
           </Grid.Column>
           <Grid.Column>
             <ContributeFrom />
