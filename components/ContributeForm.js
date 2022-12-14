@@ -27,7 +27,6 @@ const ContributeFrom = ({ address }) => {
       setSuccessMessage('You have successfully contributed to the campaign!')
     } catch (error) {
       setLoading(false)
-      console.log(error)
       setErrorMessage(error.message)
     }
   }

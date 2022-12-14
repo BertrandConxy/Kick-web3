@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import { Table, Label, Button } from 'semantic-ui-react'
 import web3 from '../contracts/web3'
 import campaignInstance from '../contracts/campaign'
 
 const RequestRow = ({ id, request, address, count }) => {
+  const router = useRouter()
   const { description, value, recipient, approvalCount, complete } = request
   const [ApproveLoading, setApproveLoading] = useState(false)
   const [FinalizeLoading, setFinalizeLoading] = useState(false)
@@ -17,9 +19,9 @@ const RequestRow = ({ id, request, address, count }) => {
         from: accounts[0],
       })
       setApproveLoading(false)
+      router.reload()
     } catch (error) {
       setApproveLoading(false)
-      console.log(error)
     }
   }
   const onFinalize = async () => {
@@ -31,9 +33,9 @@ const RequestRow = ({ id, request, address, count }) => {
         from: accounts[0],
       })
       setFinalizeLoading(false)
+      router.reload()
     } catch (error) {
       setFinalizeLoading(false)
-      console.log(error)
     }
   }
   return (

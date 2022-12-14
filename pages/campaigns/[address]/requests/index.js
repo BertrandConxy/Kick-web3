@@ -79,8 +79,8 @@ CampaignRequests.getInitialProps = async (props) => {
   const summary = await campaign.methods.getSummary().call()
 
   const requests = await Promise.all(
-    Array(requestsCount)
-      .fill()
+    Array(parseInt(requestsCount, 10))
+      .fill(0)
       .map((_, index) => {
         return campaign.methods.requests(index).call()
       }),

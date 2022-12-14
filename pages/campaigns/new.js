@@ -7,6 +7,7 @@ import web3 from '../../contracts/web3.js'
 
 const NewCampaign = () => {
   const router = useRouter()
+  const { address } = router.query
   const [minimumContribution, setMinimumContribution] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   const [loading, setLoading] = useState(false)
@@ -22,10 +23,9 @@ const NewCampaign = () => {
       })
       setMinimumContribution('')
       setLoading(false)
-      router.push('/')
+      router.push(`/campaigns/${address}/requests`)
     } catch (error) {
       setLoading(false)
-      console.log(error)
       setErrorMessage(error.message)
     }
   }
