@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
-import { Button, Form, Input, Message } from 'semantic-ui-react'
-import instance from '../contracts/factory.js'
 import web3 from '../contracts/web3.js'
+import { Button, Form, Input, Message } from 'semantic-ui-react'
+import campaignInstance from '../contracts/campaign'
 
 const ContributeFrom = () => {
   const router = useRouter()
-  const [minimumContribution, setMinimumContribution] = useState('')
+  const [contribution, setContribution] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -16,10 +16,11 @@ const ContributeFrom = () => {
     setErrorMessage('')
     try {
       const accounts = await web3.eth.getAccounts()
-      await instance.methods.createCampaign(minimumContribution).send({
+      await companyInstance.methods.contribute().send({
         from: accounts[0],
+        value: web3.utils.toWei(contribution, 'ether'),
       })
-      setMinimumContribution('')
+      setContribution('')
       setLoading(false)
       router.push('/')
     } catch (error) {
@@ -30,7 +31,7 @@ const ContributeFrom = () => {
   }
 
   const onInputChange = (event) => {
-    setMinimumContribution(event.target.value)
+    setContribution(event.target.value)
   }
   return (
     <Form style={styles.form} onSubmit={onSubmit} error={!!errorMessage}>
@@ -38,10 +39,10 @@ const ContributeFrom = () => {
         <label>Enter Amount To Contribute</label>
         <Input
           placeholder="Enter Amount"
-          label="Wei"
+          label="Ether"
           labelPosition="right"
           type="number"
-          value={minimumContribution}
+          value={contribution}
           onChange={onInputChange}
         />
       </Form.Field>
