@@ -38,7 +38,6 @@ const NewCampaign = () => {
       router.push(`/`)
     } catch (error) {
       setLoading(false)
-      console.log(error)
       setErrorMessage(error.message)
     }
   }

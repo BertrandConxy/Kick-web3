@@ -24,6 +24,7 @@ const ContributeFrom = ({ address }) => {
       })
       setContribution('')
       setLoading(false)
+      router.reload()
       setSuccessMessage('You have successfully contributed to the campaign!')
     } catch (error) {
       setLoading(false)
