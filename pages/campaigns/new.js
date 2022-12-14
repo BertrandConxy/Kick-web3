@@ -23,7 +23,7 @@ const NewCampaign = () => {
       })
       setMinimumContribution('')
       setLoading(false)
-      router.push(`/campaigns/${address}/requests`)
+      router.push(`/`)
     } catch (error) {
       setLoading(false)
       setErrorMessage(error.message)

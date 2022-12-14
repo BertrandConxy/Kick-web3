@@ -18,7 +18,7 @@ const ShowCampaign = ({
     <Layout>
       <h1>Campaign: {address}</h1>
       <Grid columns={2}>
-        <Grid.Row columns="equal" centered>
+        <Grid.Row centered>
           <Grid.Column>
             {' '}
             <h2>Campaign Details</h2>
@@ -112,7 +112,8 @@ const styles = {
   },
   wrap: {
     whiteSpace: 'nowrap',
-    fontSize: '10px',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   },
 
   gap: {

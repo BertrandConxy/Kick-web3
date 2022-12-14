@@ -13,7 +13,7 @@ const CampaignRequests = ({
 }) => {
   return (
     <Layout>
-      <Container>
+      <Container fluid>
         <Grid columns={2}>
           <Grid.Row>
             <Grid.Column>

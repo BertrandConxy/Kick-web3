@@ -35,7 +35,7 @@ const NewCampaign = () => {
       })
       setLoading(false)
       console.log('request created')
-      router.push(`/`)
+      router.push(`/campaigns/${address}/requests`)
     } catch (error) {
       setLoading(false)
       setErrorMessage(error.message)
