@@ -1,8 +1,8 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Layout from '../../../../components/Layout'
-import { Grid, Container, Button, Label, Table } from 'semantic-ui-react'
+import RequestRow from '../../../../components/RequestRow'
+import { Grid, Container, Button, Table } from 'semantic-ui-react'
 import campaignInstance from '../../../../contracts/campaign'
 
 const CampaignRequests = ({ address, requests, requestsCount }) => {
@@ -41,19 +41,14 @@ const CampaignRequests = ({ address, requests, requestsCount }) => {
           </Table.Header>
 
           <Table.Body>
-            {requests.map((request) => {
+            {requests.map((request, index) => {
               return (
-                <Table.Row>
-                  <Table.Cell>
-                    <Label ribbon>First</Label>
-                  </Table.Cell>
-                  <Table.Cell>Cell</Table.Cell>
-                  <Table.Cell>Cell</Table.Cell>
-                  <Table.Cell>Cell</Table.Cell>
-                  <Table.Cell>Cell</Table.Cell>
-                  <Table.Cell>Cell</Table.Cell>
-                  <Table.Cell>Cell</Table.Cell>
-                </Table.Row>
+                <RequestRow
+                  key={index}
+                  request={request}
+                  address={address}
+                  id={index}
+                />
               )
             })}
           </Table.Body>
