@@ -1,9 +1,10 @@
 import React from 'react'
+import Link from 'next/link'
 import Layout from '../../components/Layout'
 import ContributeFrom from '../../components/ContributeForm'
 import campaignInstance from '../../contracts/campaign'
 
-import { Card, Form, Grid, Button, Input, Message } from 'semantic-ui-react'
+import { Card, Grid, Button } from 'semantic-ui-react'
 
 const ShowCampaign = ({
   address,
@@ -98,6 +99,9 @@ const ShowCampaign = ({
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      <Link href={`/campaigns/${address}/requests`}>
+        <Button primary>View Requests</Button>
+      </Link>
     </Layout>
   )
 }

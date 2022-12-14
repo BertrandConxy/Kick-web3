@@ -24,6 +24,7 @@ const ContributeFrom = ({ address }) => {
       })
       setContribution('')
       setLoading(false)
+      router.replace(`/campaigns/${address}`)
       setSuccessMessage('You have successfully contributed to the campaign!')
     } catch (error) {
       setLoading(false)
@@ -51,7 +52,6 @@ const ContributeFrom = ({ address }) => {
           type="number"
           value={contribution}
           onChange={onInputChange}
-          width={10}
         />
       </Form.Field>
       <Message error header="Oops!" content={errorMessage} />
@@ -65,7 +65,7 @@ const ContributeFrom = ({ address }) => {
 
 const styles = {
   form: {
-    width: '40%',
+    width: '80%',
   },
 }
 
