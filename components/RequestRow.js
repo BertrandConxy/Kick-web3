@@ -4,9 +4,10 @@ import web3 from '../contracts/web3'
 import campaignInstance from '../contracts/campaign'
 
 const RequestRow = ({ id, request, address, count }) => {
-  const { description, value, recipient, approvalCount } = request
+  const { description, value, recipient, approvalCount, complete } = request
   const [ApproveLoading, setApproveLoading] = useState(false)
   const [FinalizeLoading, setFinalizeLoading] = useState(false)
+  const readyToFinalize = approvalCount > count / 2
   const onApprove = async () => {
     setApproveLoading(true)
     try {
@@ -36,7 +37,7 @@ const RequestRow = ({ id, request, address, count }) => {
     }
   }
   return (
-    <Table.Row>
+    <Table.Row disabled={complete} positive={readyToFinalize && !complete}>
       <Table.Cell>
         <Label ribbon>{id}</Label>
       </Table.Cell>
@@ -47,19 +48,23 @@ const RequestRow = ({ id, request, address, count }) => {
         {approvalCount}/{count}
       </Table.Cell>
       <Table.Cell>
-        <Button
-          color="green"
-          basic
-          onClick={onApprove}
-          loading={ApproveLoading}
-        >
-          Approve
-        </Button>
+        {complete ? null : (
+          <Button
+            color="green"
+            basic
+            onClick={onApprove}
+            loading={ApproveLoading}
+          >
+            Approve
+          </Button>
+        )}
       </Table.Cell>
       <Table.Cell>
-        <Button color="teal" onClick={onFinalize} loading={FinalizeLoading}>
-          Finalize
-        </Button>
+        {complete ? null : (
+          <Button color="teal" onClick={onFinalize} loading={FinalizeLoading}>
+            Finalize
+          </Button>
+        )}
       </Table.Cell>
     </Table.Row>
   )
