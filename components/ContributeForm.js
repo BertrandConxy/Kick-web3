@@ -35,7 +35,7 @@ const ContributeFrom = () => {
   return (
     <Form style={styles.form} onSubmit={onSubmit} error={!!errorMessage}>
       <Form.Field>
-        <label>Minimum Contribution</label>
+        <label>Enter Amount To Contribute</label>
         <Input
           placeholder="Enter Amount"
           label="Wei"
@@ -47,7 +47,7 @@ const ContributeFrom = () => {
       </Form.Field>
       <Message error header="Oops!" content={errorMessage} />
       <Button type="submit" primary loading={loading}>
-        Create!
+        Contribute
       </Button>
     </Form>
   )

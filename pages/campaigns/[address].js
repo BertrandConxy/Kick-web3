@@ -13,16 +13,21 @@ const ShowCampaign = () => {
     <Layout>
       <h1>Campaign: {address}</h1>
       <Grid columns={2} padded={'vertically'}>
-        <Grid.Row>
-          <Grid.Column>Campaign Details</Grid.Column>
-          <Grid.Column>Contribute To Campaign</Grid.Column>
+        <Grid.Row columns="equal" centered>
+          <Grid.Column>
+            {' '}
+            <h2>Campaign Details</h2>
+          </Grid.Column>
+          <Grid.Column>
+            <h2>Contribute To Campaign</h2>
+          </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
+        <Grid.Row textAlign="justified" columns="equal">
           <Grid.Column>
             <Grid columns={2}>
               <Grid.Row>
                 <Grid.Column>
-                  <Card>
+                  <Card style={styles.card}>
                     <Card.Content>
                       <Card.Header>Campaign Balance</Card.Header>
                       <Card.Meta>Balance</Card.Meta>
@@ -31,7 +36,7 @@ const ShowCampaign = () => {
                   </Card>
                 </Grid.Column>
                 <Grid.Column>
-                  <Card>
+                  <Card style={styles.card}>
                     <Card.Content>
                       <Card.Header>Campaign Balance</Card.Header>
                       <Card.Meta>Balance</Card.Meta>
@@ -40,7 +45,7 @@ const ShowCampaign = () => {
                   </Card>
                 </Grid.Column>
                 <Grid.Column>
-                  <Card>
+                  <Card style={styles.card}>
                     <Card.Content>
                       <Card.Header>Campaign Balance</Card.Header>
                       <Card.Meta>Balance</Card.Meta>
@@ -49,7 +54,7 @@ const ShowCampaign = () => {
                   </Card>
                 </Grid.Column>
                 <Grid.Column>
-                  <Card>
+                  <Card style={styles.card}>
                     <Card.Content>
                       <Card.Header>Campaign Balance</Card.Header>
                       <Card.Meta>Balance</Card.Meta>
@@ -58,7 +63,7 @@ const ShowCampaign = () => {
                   </Card>
                 </Grid.Column>
                 <Grid.Column>
-                  <Card>
+                  <Card style={styles.card}>
                     <Card.Content>
                       <Card.Header>Campaign Balance</Card.Header>
                       <Card.Meta>Balance</Card.Meta>
@@ -67,7 +72,7 @@ const ShowCampaign = () => {
                   </Card>
                 </Grid.Column>
                 <Grid.Column>
-                  <Card>
+                  <Card style={styles.card}>
                     <Card.Content>
                       <Card.Header>Campaign Balance</Card.Header>
                       <Card.Meta>Balance</Card.Meta>
@@ -78,13 +83,19 @@ const ShowCampaign = () => {
               </Grid.Row>
             </Grid>
           </Grid.Column>
-          <Grid.Column>
+          <Grid.Column floated="right">
             <ContributeFrom />
           </Grid.Column>
         </Grid.Row>
       </Grid>
     </Layout>
   )
+}
+
+const styles = {
+  card: {
+    margin: '10px 0',
+  },
 }
 
 export default ShowCampaign
