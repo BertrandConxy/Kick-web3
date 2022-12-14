@@ -4,10 +4,11 @@ import web3 from '../contracts/web3.js'
 import { Button, Form, Input, Message } from 'semantic-ui-react'
 import campaignInstance from '../contracts/campaign'
 
-const ContributeFrom = () => {
+const ContributeFrom = ({ address }) => {
   const router = useRouter()
   const [contribution, setContribution] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
+  const [successMessage, setSuccessMessage] = useState('')
   const [loading, setLoading] = useState(false)
 
   const onSubmit = async (event) => {
@@ -16,13 +17,14 @@ const ContributeFrom = () => {
     setErrorMessage('')
     try {
       const accounts = await web3.eth.getAccounts()
-      await companyInstance.methods.contribute().send({
+      const campaign = await campaignInstance(address)
+      await campaign.methods.contribute().send({
         from: accounts[0],
         value: web3.utils.toWei(contribution, 'ether'),
       })
       setContribution('')
       setLoading(false)
-      router.push('/')
+      setSuccessMessage('You have successfully contributed to the campaign!')
     } catch (error) {
       setLoading(false)
       console.log(error)
@@ -34,7 +36,12 @@ const ContributeFrom = () => {
     setContribution(event.target.value)
   }
   return (
-    <Form style={styles.form} onSubmit={onSubmit} error={!!errorMessage}>
+    <Form
+      style={styles.form}
+      onSubmit={onSubmit}
+      error={!!errorMessage}
+      success={!!successMessage}
+    >
       <Form.Field>
         <label>Enter Amount To Contribute</label>
         <Input
@@ -44,9 +51,11 @@ const ContributeFrom = () => {
           type="number"
           value={contribution}
           onChange={onInputChange}
+          width={10}
         />
       </Form.Field>
       <Message error header="Oops!" content={errorMessage} />
+      <Message success header="Success!" content={successMessage} />
       <Button type="submit" primary loading={loading}>
         Contribute
       </Button>

@@ -16,7 +16,7 @@ const ShowCampaign = ({
   return (
     <Layout>
       <h1>Campaign: {address}</h1>
-      <Grid columns={2} padded={'vertically'}>
+      <Grid columns={2}>
         <Grid.Row columns="equal" centered>
           <Grid.Column>
             {' '}
@@ -26,7 +26,7 @@ const ShowCampaign = ({
             <h2>Contribute To Campaign</h2>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row textAlign="justified" columns="equal">
+        <Grid.Row textAlign="justified">
           <Grid.Column>
             <Grid columns={2} stretched>
               <Grid.Row>
@@ -46,7 +46,7 @@ const ShowCampaign = ({
                   <Card style={styles.card}>
                     <Card.Content>
                       <Card.Header>Campaign Balance</Card.Header>
-                      <Card.Meta>{balance} Ether</Card.Meta>
+                      <Card.Meta>{balance} Wei</Card.Meta>
                       <Card.Description>
                         The balance is how much money this campaign has left to
                         spend
@@ -94,7 +94,7 @@ const ShowCampaign = ({
             </Grid>
           </Grid.Column>
           <Grid.Column floated="right">
-            <ContributeFrom />
+            <ContributeFrom address={address} />
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -109,6 +109,10 @@ const styles = {
   wrap: {
     whiteSpace: 'nowrap',
     fontSize: '10px',
+  },
+
+  gap: {
+    gap: '10px',
   },
 }
 
