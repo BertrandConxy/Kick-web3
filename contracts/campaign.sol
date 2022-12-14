@@ -63,4 +63,18 @@ contract Campaign {
         require(sent, "Ether not sent");
     }
 
+    function getSummary() public view returns (uint,uint, uint, uint, address) {
+        return (
+            minimumContribution,
+            address(this).balance,
+            numRequests,
+            numApprovers,
+            manager
+        );
+    }
+
+    function getRequestsCount() public view returns (uint) {
+        return numRequests;
+    }
+
 }

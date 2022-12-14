@@ -87,11 +87,11 @@
 			]
 		},
 		"contracts/campaign.sol": {
-			"keccak256": "0x9ef5187d78ca2028dca9d035ce97bd69aedd79303e1f53c740a34d3d0f8659d7",
+			"keccak256": "0x2edfc999ecde12125fb16d15ed6735cf8283a61067bff28b2f7a76d913aaaab5",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://ba060884811eaf4adf1827dee96e594c171c1355ecf60e8e54b3d1df18149db1",
-				"dweb:/ipfs/QmaATEwpwSAEXL4LYEyewUgZpSD52X4ddx5adh3qQhqnVm"
+				"bzz-raw://4903f558d9c95c65d67a8b4e67c2d8158bc774a754d588e87fd1e688211adfa7",
+				"dweb:/ipfs/QmfRFSmPdFVAthvYz7s2KLXQ7vZVvNhHrLkeyUeyYHy3sX"
 			]
 		}
 	},

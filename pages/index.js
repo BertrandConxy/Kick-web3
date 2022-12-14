@@ -28,22 +28,26 @@ const Home = ({ deployedCampaigns }) => {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <Card.Group>
-            {deployedCampaigns.map((address) => {
-              return (
-                <Card key={address}>
-                  <Card.Content>
-                    <Card.Header style={styles.wrap}>{address}</Card.Header>
-                  </Card.Content>
-                  <Card.Content extra>
-                    <Link href={`/campaigns/${address}`}>
-                      <Button primary>View Campaign</Button>
-                    </Link>
-                  </Card.Content>
-                </Card>
-              )
-            })}
-          </Card.Group>
+          {deployedCampaigns.length === 0 ? (
+            <h4>No campaigns available yet</h4>
+          ) : (
+            <Card.Group>
+              {deployedCampaigns.map((address) => {
+                return (
+                  <Card key={address}>
+                    <Card.Content>
+                      <Card.Header style={styles.wrap}>{address}</Card.Header>
+                    </Card.Content>
+                    <Card.Content extra>
+                      <Link href={`/campaigns/${address}`}>
+                        <Button primary>View Campaign</Button>
+                      </Link>
+                    </Card.Content>
+                  </Card>
+                )
+              })}
+            </Card.Group>
+          )}
         </Container>
       </div>
     </Layout>
