@@ -6,6 +6,7 @@ import campaignInstance from '../contracts/campaign'
 const RequestRow = ({ id, request, address, count }) => {
   const { description, value, recipient, approvalCount } = request
   const [ApproveLoading, setApproveLoading] = useState(false)
+  const [FinalizeLoading, setFinalizeLoading] = useState(false)
   const onApprove = async () => {
     setApproveLoading(true)
     try {
@@ -17,6 +18,20 @@ const RequestRow = ({ id, request, address, count }) => {
       setApproveLoading(false)
     } catch (error) {
       setApproveLoading(false)
+      console.log(error)
+    }
+  }
+  const onFinalize = async () => {
+    setFinalizeLoading(true)
+    try {
+      const accounts = await web3.eth.getAccounts()
+      const campaign = await campaignInstance(address)
+      await campaign.methods.finalizeRequest(id).send({
+        from: accounts[0],
+      })
+      setFinalizeLoading(false)
+    } catch (error) {
+      setFinalizeLoading(false)
       console.log(error)
     }
   }
@@ -41,7 +56,11 @@ const RequestRow = ({ id, request, address, count }) => {
           Approve
         </Button>
       </Table.Cell>
-      <Table.Cell>Cell</Table.Cell>
+      <Table.Cell>
+        <Button color="teal" onClick={onFinalize} loading={FinalizeLoading}>
+          Finalize
+        </Button>
+      </Table.Cell>
     </Table.Row>
   )
 }

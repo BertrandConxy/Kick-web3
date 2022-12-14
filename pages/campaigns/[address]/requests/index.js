@@ -62,7 +62,7 @@ const CampaignRequests = ({
           <Table.Footer>
             <Table.Row>
               <Table.HeaderCell colSpan="7">
-                <h2>End</h2>
+                <h4>Found {requestsCount} Request(s)</h4>
               </Table.HeaderCell>
             </Table.Row>
           </Table.Footer>
