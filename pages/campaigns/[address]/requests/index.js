@@ -5,7 +5,12 @@ import RequestRow from '../../../../components/RequestRow'
 import { Grid, Container, Button, Table } from 'semantic-ui-react'
 import campaignInstance from '../../../../contracts/campaign'
 
-const CampaignRequests = ({ address, requests, requestsCount }) => {
+const CampaignRequests = ({
+  address,
+  requests,
+  requestsCount,
+  approversCount,
+}) => {
   return (
     <Layout>
       <Container>
@@ -48,6 +53,7 @@ const CampaignRequests = ({ address, requests, requestsCount }) => {
                   request={request}
                   address={address}
                   id={index}
+                  count={approversCount}
                 />
               )
             })}
@@ -70,6 +76,7 @@ CampaignRequests.getInitialProps = async (props) => {
   const { address } = props.query
   const campaign = campaignInstance(address)
   const requestsCount = await campaign.methods.getRequestsCount().call()
+  const summary = await campaign.methods.getSummary().call()
 
   const requests = await Promise.all(
     Array(requestsCount)
@@ -82,6 +89,7 @@ CampaignRequests.getInitialProps = async (props) => {
     address,
     requests,
     requestsCount,
+    approversCount: summary[3],
   }
 }
 
