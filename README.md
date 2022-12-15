@@ -4,7 +4,7 @@
 
 # Live Demo
 
-[](https://kick-web3.netlify.app/)
+[Live Demo](https://kick-web3.netlify.app/)
 
 
 Additional description about the project and its features.
