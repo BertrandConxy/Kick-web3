@@ -2,6 +2,10 @@
 # kick-web3
 > There have been a problem in the fundraising platforms where people raise funds and then use it at their expense. This campaign smart contract to solve the problem in the Kickstart platform. The campaign smart contract will solve the problem by helping project owners to raise funds but more importantly help the sponsors play a part (vote) on what is going to be done with the money. The contract will be holding funds and spend on the agreement between the project owner and contributors. It is build with Solidity and JavaScript.
 
+# Live Demo
+
+[](https://kick-web3.netlify.app/)
+
 
 Additional description about the project and its features.
 
